@@ -1,0 +1,9 @@
+services:
+  jupyter:
+    image: tf-cv
+    ports:
+      - 8888:8888 
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+    
