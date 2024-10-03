@@ -1,0 +1,20 @@
+services:
+  retrieve_weights:
+    container_name: jupyter
+    image: yolov5-tl
+    volumes:
+      - "//a/Work/Projects/AI-DL-ML/M_YoloObjDetec/models:/yolov5"
+
+  jupyter:
+    image: tf-cv
+    container_name: jupyter
+    ports:
+      - 8888:8888 
+    # build:
+    volumes:
+      - "//a/Work/Projects/AI-DL-ML/M_YoloObjDetec:/app"
+    working_dir: /app
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+    

@@ -3,6 +3,10 @@ services:
     image: tf-cv
     ports:
       - 8888:8888 
+    build:
+    volumes:
+      - "A:\\Work\\Projects\\AI-DL-ML\\M_YoloObjDetec\\notebooks" : "/app"
+    working_dir: /app
     runtime: nvidia
     environment:
       - NVIDIA_VISIBLE_DEVICES=all
